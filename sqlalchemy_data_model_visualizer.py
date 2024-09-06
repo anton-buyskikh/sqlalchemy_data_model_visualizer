@@ -7,9 +7,9 @@ from lxml import etree
 import os
 Base = declarative_base()
 
-def generate_data_model_diagram(models, output_file='my_data_model_diagram', add_labels=True, view_diagram=True):
+def generate_data_model_diagram(models, output_file='my_data_model_diagram', add_labels=True, view_diagram=True, format='svg'):
     # Initialize graph with more advanced visual settings
-    dot = graphviz.Digraph(comment='Interactive Data Models', format='svg', 
+    dot = graphviz.Digraph(comment='Interactive Data Models', format=format, 
                             graph_attr={'bgcolor': '#EEEEEE', 'rankdir': 'TB', 'splines': 'spline'},
                             node_attr={'shape': 'none', 'fontsize': '12', 'fontname': 'Roboto'},
                             edge_attr={'fontsize': '10', 'fontname': 'Roboto'})
