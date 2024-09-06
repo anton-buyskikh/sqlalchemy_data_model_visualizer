@@ -1,15 +1,10 @@
 from datetime import datetime
-from typing import Optional
-from enum import Enum
-from decimal import Decimal
-from sqlalchemy.orm import sessionmaker, declarative_base, relationship
-from sqlalchemy import Column, String, DateTime, Integer, Numeric, Boolean, JSON, ForeignKey, LargeBinary, Text, UniqueConstraint, CheckConstraint, text as sql_text
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy import Column, String, DateTime, Integer, Numeric, Boolean, JSON, ForeignKey, LargeBinary, Text, CheckConstraint
 from sqlalchemy import inspect
 import graphviz
 from lxml import etree
 import os
-import re
 Base = declarative_base()
 
 def generate_data_model_diagram(models, output_file='my_data_model_diagram', add_labels=True, view_diagram=True):
